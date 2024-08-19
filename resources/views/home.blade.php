@@ -127,44 +127,29 @@
         <!-- Table View End -->
 
         <!-- Search Start -->
-        <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
+        <div class="container-fluid custom-bg mb-5">
             <div class="container">
                 <form action="{{ url('/home') }}" method="GET">
-                    <div class="row g-2">
-                        <div class="col-md-10">
-                            <div class="row g-2">
-                            <div class="col-md-4">
-                            <input type="text" name="hall_id" class="form-control border-0 py-3" placeholder="Hall Id">
+                    <div class="row custom-row align-items-center justify-content-center">
+                        <div class="col-md-4">
+                            <input type="text" name="hall_id" class="form-control custom-input" placeholder="Hall Id">
                         </div>
                         <div class="col-md-4">
-                            <select name="level" class="form-select border-0 py-3">
+                            <select name="level" class="form-select custom-input">
                                 <option value="">Select Level</option>
                                 <option value="Level-I">Level-I</option>
-                                <!-- Add more levels as needed -->
                             </select>
                         </div>
-                                <!-- <div class="col-md-4">
-                                    <select class="form-select border-0 py-3">
-                                        <option selected>Date</option>
-                                        <option value="Saturday">Monday</option>
-                                        <option value="Tuesday">Tuesday</option>
-                                        <option value="Wednesday">Wednesday</option>
-                                        <option value="Thursday">Thursday</option>
-                                        <option value="Friday">Friday</option>
-                                    </select>
-                                </div> -->
-                            </div>
-                        </div>
-                        <div class="col-md-2" style="display:inline">
-                            <button class="btn btn-dark border-0 w-100 py-3" onclick="return emptyness()">Search</button>
-                            <a href="{{ url('/home') }}" class="btn btn-dark border-0 w-100 py-3">Clear Results</a>
+                        <div class="col-md-2 custom-button-container">
+                            <a class="btn custom-button" onclick="return emptyness()">Search</a>
+                            <a href="{{ url('/home') }}" class="btn custom-clear-button">Clear</a>
                         </div>
                     </div>
                 </form>
-                
             </div>
         </div>
         <!-- Search End -->
+
 
         <!-- Data Form Start -->
         <div class="container-form">
@@ -240,6 +225,38 @@
             </form>
         </div>
         <!-- Data Form End -->
+
+                <!-- Table View Start -->
+                <div class="container">
+            <h1>Request Table</h1>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Hall ID</th>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Date</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Purpose</th>
+                            <th>Status</th>
+                            <th>Requested Date</th>
+                            <th>Respond Date</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                        @foreach($data as $row)
+                        <tr class="table-row">
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Table View End -->
 
         <!-- Footer Start -->
         <div class="footer bg-dark text-white-50 pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
