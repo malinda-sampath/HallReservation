@@ -543,7 +543,7 @@
 
 /* table-responsive */
 .table-responsive {
-    max-height: 400px;
+    max-height: 500px;
     overflow-y: auto;
     padding-top: 10px;
     padding-bottom: 20px;
@@ -551,6 +551,34 @@
 
 .table .table-row{
     cursor: pointer;
+}
+
+/* Edit button styling */
+.btn-success {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.btn-success:hover {
+    background-color: #45a049;
+    transform: scale(1.08);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Delete button styling */
+.btn-danger {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-danger:hover {
+    background-color: #e53935;
+    transform: scale(1.08);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* search */
@@ -660,20 +688,44 @@
     margin-right: 10px;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    background-color: #5cb85c;
+/* Add button styling */
+.btn-dataAdd {
+    background-color: #4CAF50; 
+    width:150px;
+    height: 50px;
     color: white;
-    cursor: pointer;
-    margin-top: 10px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-right:30px ;
+    transition: .5s;
+    border-radius: 5px;
 }
 
-button:hover {
-    background-color: #4cae4c;
+.btn-dataAdd:hover {
+    background-color: #45a049;
+    transform: scale(1.08);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+
+/* Clear button styling */
+.btn-dataClear {
+    background-color: #f44336;
+    width:150px;
+    height: 50px;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left:30px ;
+    transition: .5s;
+    border-radius: 5px;
+}
+
+.btn-dataClear:hover {
+    background-color: #e53935;
+    transform: scale(1.08);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
 
 /* Responsive Styles */
 @media (min-width: 600px) {

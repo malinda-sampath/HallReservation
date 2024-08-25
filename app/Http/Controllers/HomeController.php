@@ -30,10 +30,6 @@ class HomeController extends Controller
             $query->where('hall_id', $request->input('hall_id'));
         }
 
-        if ($request->filled('level')) {
-            $query->where('level', $request->input('level'));
-        }
-
         if ($request->filled('date')) {
             $query->where('date', $request->input('date'));
         }
@@ -41,7 +37,13 @@ class HomeController extends Controller
         // Get the filtered results or all data if no filters are applied
         $data = $query->get();
 
-        // Pass the data to the view
-        return view('home', compact('data'));
+        // Check if an edit_id is provided
+        $table1 = null;
+        if ($request->has('edit_id')) {
+            $table1 = Table1::find($request->edit_id);
+        }
+
+        // Pass the data and the specific record to be edited (if any) to the view
+        return view('home', compact('data', 'table1'));
     }
 }
