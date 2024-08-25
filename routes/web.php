@@ -4,6 +4,9 @@
     use App\Http\Controllers\HomeController;
     use App\Http\Controllers\Auth\LoginController;
     use App\Http\Controllers\DataEntryController;
+    use App\Http\Controllers\ContactController;
+    
+
 
     Route::get('/contact', function () {
         return view('contact');
@@ -33,6 +36,9 @@
     Auth::routes();
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::post('/home', [DataEntryController::class, 'store']);
+    Route::post('/contact', [ContactController::class, 'store']);
+
+
     
 
     
