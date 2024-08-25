@@ -209,19 +209,19 @@
 
         <!-- Data Form End -->
 
-
         <!-- Table View Start -->
         <div class="container">
-            <h1>Request Table</h1>
+            <h1>Requests Table</h1>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Hall ID</th>
+                            <th>Hall</th>
                             <th>Name</th>
                             <th>Position</th>
-                            <th>Date</th>
+                            <th>Contact</th>
+                            <th>Event Date</th>
                             <th>Start Time</th>
                             <th>End Time</th>
                             <th>Purpose</th>

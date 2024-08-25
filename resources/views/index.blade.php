@@ -47,7 +47,7 @@
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
                 <a href="{{ route('index') }}" class="navbar-brand d-flex align-items-center text-center">
                     <div class="icon p-2 me-2">
-                        <img class="img-fluid" src="img/icon-deal.png" alt="Icon" style="width: 30px; height: 30px;">
+                        <img class="img-fluid" src="img/icon-deal.png" alt="Icon"  style="width: 30px; height: 30px;">
                     </div>
                     <h1 class="m-0 text-primary">Hall Reservation</h1>
                 </a>
@@ -67,18 +67,17 @@
         <div class="container-fluid header bg-white p-0">
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
                 <div class="col-md-6 p-5 mt-lg-5">
-                    <h1 class="display-5 animated fadeIn mb-4">Find A <span class="text-primary">Perfect Home</span> To Live With Your Family</h1>
-                    <p class="animated fadeIn mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet
-                        sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
+                    <h3 class="display-5 animated fadeIn mb-4">Department of Computer Science University of Ruhuna<span class="text-primary"> Lecture Hall Management System</span></h3>
+                    <p class="animated fadeIn mb-4 pb-2">Easily reserve, track, and manage lecture halls for your events. Stay updated with timetables and special allocations. Simplifying your univeristy scheduling experience</p>
                     <a href="" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Get Started</a>
                 </div>
                 <div class="col-md-6 animated fadeIn">
                     <div class="owl-carousel header-carousel">
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="img/carousel-1.jpg" alt="">
+                            <img class="img-fluid" src="img/uor-img1.jpg" alt="">
                         </div>
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="img/carousel-2.jpg" alt="">
+                            <img class="img-fluid" src="img/uor-img2.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -121,8 +120,8 @@
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">Property Types</h1>
-                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+                    <h1 class="mb-3">Lecture Hall Schedules</h1>
+                    <p>Explore the current lecture hall schedule. View available time slots and upcoming events to plan your bookings accordingly</p>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -131,8 +130,8 @@
                                 <!-- <div class="icon mb-3">
                                     <img class="img-fluid" src="img/icon-apartment.png" alt="Icon">
                                 </div> -->
-                                <h6>Hall No. 01</h6>
-                                <span>Time table</span>
+                                <h6>Main Auditorium</h6>
+                                <span>Schedule</span>
                             </div>
                         </a>
                     </div>
@@ -142,8 +141,8 @@
                                 <!-- <div class="icon mb-3">
                                     <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
                                 </div> -->
-                                <h6>Hall No. 02</h6>
-                                <span>Time table</span>
+                                <h6>Mini Auditorium</h6>
+                                <span>Schedule</span>
                             </div>
                         </a>
                     </div>
@@ -153,8 +152,8 @@
                                 <!-- <div class="icon mb-3">
                                     <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
                                 </div> -->
-                                <h6>Hall No. 03</h6>
-                                <span>Time table</span>
+                                <h6>Computer Lab 01</h6>
+                                <span>Schedule</span>
                             </div>
                         </a>
                     </div>
@@ -164,8 +163,8 @@
                                 <!-- <div class="icon mb-3">
                                     <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
                                 </div> -->
-                                <h6>Hall No. 04</h6>
-                                <span>Time table</span>
+                                <h6>Computer Lab 02</h6>
+                                <span>Schedule</span>
                             </div>
                         </a>
                     </div>
@@ -175,8 +174,8 @@
                                 <!-- <div class="icon mb-3">
                                     <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
                                 </div> -->
-                                <h6>Hall No. 05</h6>
-                                <span>Time table</span>
+                                <h6>Computer Lab 03</h6>
+                                <span>Schedule</span>
                             </div>
                         </a>
                     </div>
@@ -186,8 +185,8 @@
                                 <!-- <div class="icon mb-3">
                                     <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
                                 </div> -->
-                                <h6>Hall No. 06</h6>
-                                <span>Time table</span>
+                                <h6>Conference Room</h6>
+                                <span>Schedule</span>
                             </div>
                         </a>
                     </div>
@@ -197,8 +196,8 @@
                                 <!-- <div class="icon mb-3">
                                     <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
                                 </div> -->
-                                <h6>Hall No. 07</h6>
-                                <span>Time table</span>
+                                <h6>Record Room</h6>
+                                <span>Schedule</span>
                             </div>
                         </a>
                     </div>
@@ -208,8 +207,30 @@
                                 <!-- <div class="icon mb-3">
                                     <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
                                 </div> -->
-                                <h6>Hall No. 08</h6>
-                                <span>Time table</span>
+                                <h6>Special Lab</h6>
+                                <span>Schedule</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                            <div class="rounded p-4">
+                                <!-- <div class="icon mb-3">
+                                    <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
+                                </div> -->
+                                <h6>E-Learning Center</h6>
+                                <span>Schedule</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                            <div class="rounded p-4">
+                                <!-- <div class="icon mb-3">
+                                    <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
+                                </div> -->
+                                <h6>Special Room</h6>
+                                <span>Schedule</span>
                             </div>
                         </a>
                     </div>
@@ -225,16 +246,28 @@
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                         <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                            <img class="img-fluid w-100" src="img/about.jpg">
+                            <img class="img-fluid w-100" src="img/map.jpg">
                         </div>
                     </div>
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                        <h1 class="mb-4">#1 Place To Find The Perfect Property</h1>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Tempor erat elitr rebum at clita</p>
+                        <!-- <h1 class="mb-4">#1 Place To Find The Perfect Property</h1> -->
+                        <p class="mb-4">Find your way around campus with our interactive lecture hall map. Easily locate your designated hall for reservations or events, ensuring you reach the right spot on time.</p>
+                        <ul>
+                            <li><strong>03:</strong> Computer Lab 01</li>
+                            <li><strong>04:</strong> Mini Auditorium</li>
+                            <li><strong>06:</strong> Conference Room</li>
+                            <li><strong>07:</strong> Record Room</li>
+                            <li><strong>08:</strong> Special Room</li>
+                            <li><strong>09:</strong> Computer Lab 02</li>
+                            <li><strong>10:</strong> E-Learning Center</li>
+                            <li><strong>11:</strong> Special Lab</li>
+                            <li><strong>13:</strong> Main Auditorium</li>
+                            <li><strong>16:</strong> Computer Lab 03</li>
+                        </ul>
+                        <!-- <p><i class="fa fa-check text-primary me-3"></i>Tempor erat elitr rebum at clita</p>
                         <p><i class="fa fa-check text-primary me-3"></i>Aliqu diam amet diam et eos</p>
                         <p><i class="fa fa-check text-primary me-3"></i>Clita duo justo magna dolore erat amet</p>
-                        <a class="btn btn-primary py-3 px-5 mt-3" href="">Read More</a>
+                        <a class="btn btn-primary py-3 px-5 mt-3" href="">Read More</a> -->
                     </div>
                 </div>
             </div>
@@ -243,7 +276,7 @@
 
 
         <!-- Testimonial Start -->
-        <div class="container-xxl py-5">
+        <!-- <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h1 class="mb-3">Our Clients Say!</h1>
@@ -288,7 +321,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Testimonial End -->
         
 
