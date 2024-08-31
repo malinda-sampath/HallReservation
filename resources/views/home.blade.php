@@ -149,7 +149,6 @@
         <!-- Search End -->
 
 
-
         <!-- Data Form Start -->
         <form class="container-form" id="dataEntryForm" action="{{ isset($table1) ? url('/update/'.$table1->id) : url('/home') }}" method="POST">
             @csrf
@@ -161,8 +160,21 @@
 
             <div class="form-row">
                 <label for="hall_id" class="hall_id">Hall ID:</label>
-                <input type="text" id="hall_id" name="hall_id" value="{{ $table1->hall_id ?? '' }}" required>
+                <select class="form-control" id="hall_id" name="hall_id" style="background-color: white" required>
+                    <option value="">Select Hall</option>
+                    <option value="H13" {{ (isset($table1) && $table1->hall_id == 'H13') ? 'selected' : '' }}>Main-auditorium</option>
+                    <option value="H04" {{ (isset($table1) && $table1->hall_id == 'H04') ? 'selected' : '' }}>Mini-auditorium</option>
+                    <option value="H03" {{ (isset($table1) && $table1->hall_id == 'H03') ? 'selected' : '' }}>Computer Lab 01</option>
+                    <option value="H09" {{ (isset($table1) && $table1->hall_id == 'H09') ? 'selected' : '' }}>Computer Lab 02</option>
+                    <option value="H16" {{ (isset($table1) && $table1->hall_id == 'H16') ? 'selected' : '' }}>Computer Lab 03</option>
+                    <option value="H06" {{ (isset($table1) && $table1->hall_id == 'H06') ? 'selected' : '' }}>Conference Room</option>
+                    <option value="H07" {{ (isset($table1) && $table1->hall_id == 'H07') ? 'selected' : '' }}>Record Room</option>
+                    <option value="H11" {{ (isset($table1) && $table1->hall_id == 'H11') ? 'selected' : '' }}>Special Lab</option>
+                    <option value="H10" {{ (isset($table1) && $table1->hall_id == 'H10') ? 'selected' : '' }}>E-Learning Center</option>
+                    <option value="H08" {{ (isset($table1) && $table1->hall_id == 'H08') ? 'selected' : '' }}>Special Room</option>
+                </select>
             </div>
+
 
             <div class="form-row">
                 <label for="level" class="level">Level:</label>

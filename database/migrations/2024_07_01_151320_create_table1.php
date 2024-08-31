@@ -19,8 +19,7 @@ return new class extends Migration
             $table->string('date');
             $table->time('start_time');
             $table->time('end_time');
-            $table->boolean('is_visible');
-            $table->text('message');
+            $table->boolean('is_visible')->default(true);
             $table->date('insert_date');
             $table->date('update_date');
             $table->timestamps();

@@ -17,7 +17,6 @@ class DataEntryController extends Controller
             'start_time' => 'required|date_format:H:i',
             'end_time' => 'required|date_format:H:i',
             'is_visible' => 'boolean',
-            'message' => 'nullable|string',
         ]);
 
         $validatedData['insert_date'] = now()->toDateString();

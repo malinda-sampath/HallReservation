@@ -22,7 +22,7 @@
         return view('index');
     })->name('index');
 
-    // Authentication Routes
+    //Authentication Routes
     Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [LoginController::class, 'login']);
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
@@ -39,6 +39,8 @@
     Route::get('/edit/{id}', [DataEntryController::class, 'edit']);
     Route::put('/update/{id}', [DataEntryController::class, 'update']);
     Route::get('/delete/{id}', [DataEntryController::class,'delete']);
+
+    Route::post('/contact', [ContactController::class, 'store']);
 
 
     

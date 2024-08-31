@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reservations', function (Blueprint $table) {
+        Schema::create('reservations_table', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('position');
             $table->string('hall');
             $table->string('purpose');
-            $table->date('event-date');
-            $table->time('start-time');
-            $table->time('end-time');
-            $table->string('contact-num');
+            $table->date('event_date');
+            $table->time('start_time');
+            $table->time('end_time');
+            $table->string('contact_num');
             $table->string('status')->default('pending');
             $table->timestamps();
         });
