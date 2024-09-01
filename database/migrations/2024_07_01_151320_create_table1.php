@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('table1', function (Blueprint $table) {
             $table->id()->notnull;
-            $table->string('hall_id');
-            $table->string('level');
-            $table->string('subject_id');
-            $table->string('date');
+            $table->string('hall_id')->null;
+            $table->string('level')->null;
+            $table->string('subject_id')->null;
+            $table->string('date')->null;
             $table->time('start_time');
-            $table->time('end_time');
-            $table->boolean('is_visible');
-            $table->text('message');
+            $table->time('end_time')->null;
+            $table->boolean('is_visible')->null;
+            $table->text('message')->null;
             $table->date('insert_date');
             $table->date('update_date');
             $table->timestamps();
