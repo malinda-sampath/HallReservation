@@ -79,8 +79,13 @@
     
 })(jQuery);
 
-function clearForm(){
-    document.getElementById('dataEntryForm').reset();
+function clearForm() {
+    var button = document.querySelector('.btn-dataClear');
+    if (button.innerText === 'Clear') {
+        document.getElementById('dataEntryForm').reset();
+    } else {
+        window.location.href = '/home';
+    }
 }
 
 
