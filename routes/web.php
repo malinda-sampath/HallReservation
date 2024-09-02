@@ -4,20 +4,15 @@
     use App\Http\Controllers\HomeController;
     use App\Http\Controllers\Auth\LoginController;
     use App\Http\Controllers\DataEntryController;
+    use App\Http\Controllers\TimeTableController;
 
     //Contact Routes
     Route::get('/contact', function () {
         return view('contact');
     });
 
-    //Index Routes
-    Route::get('/index', function () {
-        return view('index');
-    });
+    Route::get('/index', [TimeTableController::class, 'timetable'])->name('index');
 
-    Route::get('/index', function () {
-        return view('index');
-    })->name('index');
 
     // Authentication Routes
     Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
