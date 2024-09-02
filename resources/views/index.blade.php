@@ -86,159 +86,167 @@
         <!-- Header End -->
 
 
-        <!-- Search Start -->
-        <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
-            <div class="container">
-                <div class="row g-2">
-                    <div class="col-md-10">
-                        <div class="row g-2">
-                            <div class="col-md-4">
-                                <input type="text" class="form-control border-0 py-3" placeholder="Search Keyword">
-                            </div>
-                            <div class="col-md-4">
-                                <select class="form-select border-0 py-3">                  
-                                    <option value="1">Ground Floor</option>
-                                    <option value="2">1st Floor</option>
-                                    <option value="3">2nd Floor</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <input type="date" class="form-select border-0 py-3">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <button class="btn btn-dark border-0 w-100 py-3">Search</button>
-                    </div>
-                </div>
+        <!-- Category Start -->
+        <div class="custom-timetable-container">
+            <div class="custom-timetable-header">
+                <h1 class="title">Lecture Time Table</h1>
+                <p class="description">Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
             </div>
-        </div>
-        <!-- Search End -->
+            <div class="custom-timetable-content">
+                <h2 class="subtitle">Schedule for Level-I - ({{ \Carbon\Carbon::now('Asia/Colombo')->format('Y/m/d') }})</h2>
 
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Hall ID</th>
+                            <th>Level</th>
+                            <th>Subject ID</th>
+                            <th>Date</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if($rows->isEmpty())
+                            <tr>
+                                <td colspan="7" class="no-data">No data available for today.</td>
+                            </tr>
+                        @else
+                            @foreach($rows as $row)
+                            <tr>
+                                <td>{{ $row->id }}</td>
+                                <td>{{ $row->hall_id }}</td>
+                                <td>{{ $row->level }}</td>
+                                <td>{{ $row->subject_id }}</td>
+                                <td>{{ $row->date }}</td>
+                                <td>{{ $row->start_time }}</td>
+                                <td>{{ $row->end_time }}</td>
+                            </tr>
+                            @endforeach
+                        @endif
+                    </tbody>
+                </table>
+            </div>
 
         <!-- Category Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">Lecture Hall Schedules</h1>
-                    <p>Explore the current lecture hall schedule. View available time slots and upcoming events to plan your bookings accordingly</p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <!-- <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-apartment.png" alt="Icon">
-                                </div> -->
-                                <h6>Main Auditorium</h6>
-                                <span>Schedule</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <!-- <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
-                                </div> -->
-                                <h6>Mini Auditorium</h6>
-                                <span>Schedule</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <!-- <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
-                                </div> -->
-                                <h6>Computer Lab 01</h6>
-                                <span>Schedule</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <!-- <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
-                                </div> -->
-                                <h6>Computer Lab 02</h6>
-                                <span>Schedule</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <!-- <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
-                                </div> -->
-                                <h6>Computer Lab 03</h6>
-                                <span>Schedule</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <!-- <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
-                                </div> -->
-                                <h6>Conference Room</h6>
-                                <span>Schedule</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <!-- <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
-                                </div> -->
-                                <h6>Record Room</h6>
-                                <span>Schedule</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <!-- <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
-                                </div> -->
-                                <h6>Special Lab</h6>
-                                <span>Schedule</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <!-- <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
-                                </div> -->
-                                <h6>E-Learning Center</h6>
-                                <span>Schedule</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <!-- <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
-                                </div> -->
-                                <h6>Special Room</h6>
-                                <span>Schedule</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+        <div class="custom-timetable-container">
+            <div class="custom-timetable-header">
+                <h1 class="title">Lecture Time Table</h1>
+                <p class="description">Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+            </div>
+            <div class="custom-timetable-content">
+                <h2 class="subtitle">Schedule for Level-I - ({{ \Carbon\Carbon::now('Asia/Colombo')->format('Y/m/d') }})</h2>
+
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Hall ID</th>
+                            <th>Level</th>
+                            <th>Subject ID</th>
+                            <th>Date</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if($rows->isEmpty())
+                            <tr>
+                                <td colspan="7" class="no-data">No data available for today.</td>
+                            </tr>
+                        @else
+                            @foreach($rows as $row)
+                            <tr>
+                                <td>{{ $row->id }}</td>
+                                <td>{{ $row->hall_id }}</td>
+                                <td>{{ $row->level }}</td>
+                                <td>{{ $row->subject_id }}</td>
+                                <td>{{ $row->date }}</td>
+                                <td>{{ $row->start_time }}</td>
+                                <td>{{ $row->end_time }}</td>
+                            </tr>
+                            @endforeach
+                        @endif
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="custom-timetable-content">
+                <h2 class="subtitle">Schedule for Level-II - ({{ \Carbon\Carbon::now('Asia/Colombo')->format('Y/m/d') }})</h2>
+
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Hall ID</th>
+                            <th>Level</th>
+                            <th>Subject ID</th>
+                            <th>Date</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if($rows->isEmpty())
+                            <tr>
+                                <td colspan="7" class="no-data">No data available for today.</td>
+                            </tr>
+                        @else
+                            @foreach($rows as $row)
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            @endforeach
+                        @endif
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="custom-timetable-content">
+                <h2 class="subtitle">Schedule for Level-III - ({{ \Carbon\Carbon::now('Asia/Colombo')->format('Y/m/d') }})</h2>
+
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Hall ID</th>
+                            <th>Level</th>
+                            <th>Subject ID</th>
+                            <th>Date</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if($rows->isEmpty())
+                            <tr>
+                                <td colspan="7" class="no-data">No data available for today.</td>
+                            </tr>
+                        @else
+                            @foreach($rows as $row)
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            @endforeach
+                        @endif
+                    </tbody>
+                </table>
             </div>
         </div>
         <!-- Category End -->
-
 
         <!-- About Start -->
         <div class="container-xxl py-5">
@@ -273,7 +281,6 @@
             </div>
         </div>
         <!-- About End -->
-
 
         <!-- Testimonial Start -->
         <!-- <div class="container-xxl py-5">
