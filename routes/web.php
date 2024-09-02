@@ -40,7 +40,14 @@
     Route::put('/update/{id}', [DataEntryController::class, 'update']);
     Route::get('/delete/{id}', [DataEntryController::class,'delete']);
 
-
     
 
+    
+    Route::post('/contact', [ContactController::class, 'store']);
+
+    Route::get('/requests/feedback/{id}', [ContactController::class, 'feedback'])->name('requests.feedback');
+    Route::get('/requests/download-pdf/{id}', [ContactController::class, 'downloadPDF'])->name('requests.download_pdf');
+    
+
+    
     
