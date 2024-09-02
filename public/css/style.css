@@ -524,6 +524,125 @@
     border-right: none;
 }
 
+/* index timetable */
+.custom-timetable-container {
+    background: linear-gradient(135deg, #f3f4f6, #ffffff);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    max-width: 1200px;
+    margin: 30px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header */
+.custom-timetable-header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.custom-timetable-header .title {
+    font-size: 2.5rem;
+    color: #1e2022;
+    font-weight: 700;
+    margin: 0;
+}
+
+.custom-timetable-header .description {
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Content */
+.custom-timetable-content {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.custom-timetable-content .subtitle {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.custom-timetable-content .subheader {
+    display: block;
+    font-size: 1.2rem;
+    color: #888;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.custom-timetable-content .date {
+    font-size: 1.4rem;
+    color: #0E2E50;
+    margin-bottom: 20px;
+    font-weight: 700;
+    border-bottom: 2px solid #0E2E50;
+    padding-bottom: 10px;
+}
+
+/* Table */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.custom-table thead {
+    background: #0E2E50;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.custom-table thead th {
+    padding: 15px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.custom-table tbody td {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.custom-table tbody tr:nth-of-type(odd) {
+    background: #f9f9f9;
+}
+
+.custom-table tbody tr:hover {
+    background: #e0e0e0;
+    transform: scale(1.02);
+}
+
+.no-data {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    padding: 20px;
+    font-size: 1.1rem;
+    background: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
 
 /* Login */
 .text-login-title{
@@ -531,7 +650,6 @@
     text-align: center;
     margin: 10px;
     font-size: 40px;
-
 }
 
 .footer-social{
