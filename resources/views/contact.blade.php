@@ -67,7 +67,7 @@
         <div class="container-fluid header bg-white p-0">
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
                 <div class="col-md-6 p-5 mt-lg-5">
-                    <h1 class="display-5 animated fadeIn mb-4" style="margin-top:50px">Make Request</h1> 
+                    <h1 class="display-5 animated fadeIn mb-4" style="margin-top:50px">Make a Reservation</h1> 
                         <nav aria-label="breadcrumb animated fadeIn">
                         <ol class="breadcrumb text-uppercase">
                             <li class="breadcrumb-item"><a href="{{ url('/index') }}">Home</a></li>
@@ -82,10 +82,130 @@
         <!-- Contact Start -->
         <div class="container-xxl py-5">
             <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <!-- <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h1 class="mb-3">Contact Us</h1>
                     <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+                </div> -->
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="row gy-4">
+                            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                                <!-- <div class="bg-light rounded p-3"> -->
+                                    <!-- <div class="d-flex align-items-center bg-white rounded p-3" style="border: 1px dashed rgba(0, 185, 142, .3)"> -->
+                                        <!-- <div class="icon me-3" style="width: 45px; height: 45px;">
+                                             <i class="fa fa-map-marker-alt text-primary"></i> -->
+                                        <!-- </div>  -->
+                                        <!-- <span>Department of Computer Science, University of Ruhuna</span> -->
+                                    <!-- </div> -->
+                                <!-- </div> -->
+                            </div>
+                            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                                <!-- <div class="bg-light rounded p-3"> -->
+                                    <!-- <div class="d-flex align-items-center bg-white rounded p-3" style="border: 1px dashed rgba(0, 185, 142, .3)"> -->
+                                        <!-- <div class="icon me-3" style="width: 45px; height: 45px;">
+                                             <i class="fa fa-envelope-open text-primary"></i> -->
+                                        <!-- </div> --> 
+                                        <!-- <span>info@example.com</span> -->
+                                    <!-- </div> -->
+                                <!-- </div> -->
+                            </div>
+                            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                                <!-- <div class="bg-light rounded p-3"> -->
+                                    <!-- <div class="d-flex align-items-center bg-white rounded p-3" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                                        <div class="icon me-3" style="width: 45px; height: 45px;">
+                                            <i class="fa fa-phone-alt text-primary"></i>
+                                        </div> -->
+                                        <!-- <span>+012 345 6789</span>
+                                    </div> -->
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <iframe class="position-relative rounded w-100 h-100"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3079.6430087368117!2d80.57371417364027!3d5.939593994044829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae13904aaa6ab35%3A0xd4d8a1376614f3a4!2sDepartment%20of%20Computer%20Science!5e1!3m2!1sen!2slk!4v1723559144525!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            frameborder="0" style="min-height: 400px; border:0;" allowfullscreen="" aria-hidden="false"
+                            tabindex="0"></iframe>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wow fadeInUp" data-wow-delay="0.5s">
+                            <p class="mb-4">Submit your lecture hall reservation request. Fill in the required details to secure your preferred time and space for academic or special events.</p>
+                            <form method="POST" action= "{{ url('/contact') }}">
+                                @csrf
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+                                            <label for="name">Your Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                        <select class="form-control" id="position" name="position" style="background-color: white">
+                                             <option value="">Select Position</option>
+                                            <option value="lecturer">Lecturer</option>
+                                            <option value="student">Student</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                        <select class="form-control" id="hall" name="hall" style="background-color: white">
+                                             <option value="">Select Hall</option>
+                                            <option value="H13">Main-auditorium</option>
+                                            <option value="H04">Mini-auditorium</option>
+                                            <option value="H03">Computer Lab 01</option>
+                                            <option value="H09">Computer Lab 02</option>
+                                            <option value="H16">Computer Lab 03</option>
+                                            <option value="H06">Conference Room</option>
+                                            <option value="H07">Record Room</option>
+                                            <option value="H11">Special Lab</option>
+                                            <option value="H10">E-Learning Center</option>
+                                            <option value="H08">Special Room</option>
+                                        </select>
+                                        </div><p>
+                                        <div>
+                                            <label for="event-date">Event Date</label>
+                                            <input type="date" class="form-control" id="event_date" name= "event_date" placeholder="event_date">
+                                        </div><p>
+                                        <div>
+                                            <label for="start-time">Start Time</label>
+                                            <input type="time" class="form-control" id="start_time" name="start_time" placeholder="start_time">
+                                        </div>
+                                        <div>
+                                            <label for="end-time">End Time</label>
+                                            <input type="time" class="form-control" id="end_time" name="end_time" placeholder="end_time">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Leave a message here" id="purpose" name="purpose" style="height: 100px"></textarea>
+                                            <label for="purpose">Purpose</label>
+                                        </div><p>
+                                        <div>
+                                            <input type="text" class="form-control" id="contact_num" name="contact_num" placeholder="Your Contact Number">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3" type="submit">Submit Request</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+        
+        <div class="container-xxl py-5">
+            <div class="container">
+                <!-- <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">Contact Us</h1>
+                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+                </div> -->
                 <div class="row g-4">
                     <div class="col-12">
                         <div class="row gy-4">
@@ -121,53 +241,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <iframe class="position-relative rounded w-100 h-100"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3079.6430087368117!2d80.57371417364027!3d5.939593994044829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae13904aaa6ab35%3A0xd4d8a1376614f3a4!2sDepartment%20of%20Computer%20Science!5e1!3m2!1sen!2slk!4v1723559144525!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                            frameborder="0" style="min-height: 400px; border:0;" allowfullscreen="" aria-hidden="false"
-                            tabindex="0"></iframe>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="wow fadeInUp" data-wow-delay="0.5s">
-                            <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                            <form>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                            <label for="name">Your Name</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                            <label for="email">Your Email</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                            <label for="subject">Subject</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
-                                            <label for="message">Message</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Contact End -->
-
+                    
 
         <!-- Footer Start -->
         <div class="footer bg-dark text-white-50 pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">

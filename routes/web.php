@@ -5,6 +5,7 @@
     use App\Http\Controllers\Auth\LoginController;
     use App\Http\Controllers\DataEntryController;
     use App\Http\Controllers\TimeTableController;
+    use App\Http\Controllers\ContactController;
 
     //Contact Routes
     Route::get('/contact', function () {
@@ -31,6 +32,8 @@
     Route::get('/edit/{id}', [DataEntryController::class, 'edit']);
     Route::put('/update/{id}', [DataEntryController::class, 'update']);
     Route::get('/delete/{id}', [DataEntryController::class,'delete']);
+
+    Route::post('/contact', [ContactController::class, 'store']);
 
 
 

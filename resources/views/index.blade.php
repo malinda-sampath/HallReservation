@@ -67,9 +67,8 @@
         <div class="container-fluid header bg-white p-0">
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
                 <div class="col-md-6 p-5 mt-lg-5">
-                    <h1 class="display-5 animated fadeIn mb-4">Find A <span class="text-primary">Perfect Home</span> To Live With Your Family</h1>
-                    <p class="animated fadeIn mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet
-                        sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
+                    <h1 class="display-5 animated fadeIn mb-4">Department of Computer Science University of Ruhuna<span class="text-primary"><br> Lecture Hall Management System</span></h1>
+                    <p class="animated fadeIn mb-4 pb-2">Easily reserve, track, and manage lecture halls for your events. Stay updated with timetables and special allocations. Simplifying your univeristy scheduling experience</p>
                     <a href="" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Get Started</a>
                 </div>
                 <div class="col-md-6 animated fadeIn">
@@ -91,7 +90,7 @@
         <div class="custom-timetable-container">
             <div class="custom-timetable-header">
                 <h1 class="title">Lecture Time Table</h1>
-                <p class="description">Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+                <p class="description">Explore the current lecture hall schedule. View available time slots and upcoming events to plan your bookings accordingly</p>
             </div>
             <div class="custom-timetable-content">
                 <h2 class="subtitle">Schedule for Level-I - ({{ \Carbon\Carbon::now('Asia/Colombo')->format('Y/m/d') }})</h2>
@@ -212,16 +211,28 @@
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                         <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                            <img class="img-fluid w-100" src="img/about.jpg">
+                            <img class="img-fluid w-100" src="img/map.jpg">
                         </div>
                     </div>
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                        <h1 class="mb-4">#1 Place To Find The Perfect Property</h1>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Tempor erat elitr rebum at clita</p>
+                        <!-- <h1 class="mb-4">#1 Place To Find The Perfect Property</h1> -->
+                        <p class="mb-4">Find your way around campus with our interactive lecture hall map. Easily locate your designated hall for reservations or events, ensuring you reach the right spot on time.</p>
+                        <ul>
+                            <li><strong>03:</strong> Computer Lab 01</li>
+                            <li><strong>04:</strong> Mini Auditorium</li>
+                            <li><strong>06:</strong> Conference Room</li>
+                            <li><strong>07:</strong> Record Room</li>
+                            <li><strong>08:</strong> Special Room</li>
+                            <li><strong>09:</strong> Computer Lab 02</li>
+                            <li><strong>10:</strong> E-Learning Center</li>
+                            <li><strong>11:</strong> Special Lab</li>
+                            <li><strong>13:</strong> Main Auditorium</li>
+                            <li><strong>16:</strong> Computer Lab 03</li>
+                        </ul>
+                        <!-- <p><i class="fa fa-check text-primary me-3"></i>Tempor erat elitr rebum at clita</p>
                         <p><i class="fa fa-check text-primary me-3"></i>Aliqu diam amet diam et eos</p>
                         <p><i class="fa fa-check text-primary me-3"></i>Clita duo justo magna dolore erat amet</p>
-                        <a class="btn btn-primary py-3 px-5 mt-3" href="">Read More</a>
+                        <a class="btn btn-primary py-3 px-5 mt-3" href="">Read More</a> -->
                     </div>
                 </div>
             </div>
@@ -229,7 +240,7 @@
         <!-- About End -->
 
         <!-- Testimonial Start -->
-        <div class="container-xxl py-5">
+        <!-- <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h1 class="mb-3">Our Clients Say!</h1>
@@ -274,7 +285,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Testimonial End -->
         
 
