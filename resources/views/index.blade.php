@@ -49,7 +49,7 @@
                     <div class="icon p-2 me-2">
                         <img class="img-fluid" src="img/icon-deal.png" alt="Icon" style="width: 30px; height: 30px;">
                     </div>
-                    <h1 class="m-0 text-primary">Hall Reservation</h1>
+                    <h1 class="m-0 text-primary">Lecture Hall Reservation</h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -67,17 +67,17 @@
         <div class="container-fluid header bg-white p-0">
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
                 <div class="col-md-6 p-5 mt-lg-5">
-                    <h1 class="display-5 animated fadeIn mb-4">Department of Computer Science University of Ruhuna<span class="text-primary"><br> Lecture Hall Management System</span></h1>
+                    <h1 class="display-5 animated fadeIn mb-4">Department of Computer Science<span class="text-primary"><br> Lecture Hall Management System</span></h1>
                     <p class="animated fadeIn mb-4 pb-2">Easily reserve, track, and manage lecture halls for your events. Stay updated with timetables and special allocations. Simplifying your univeristy scheduling experience</p>
-                    <a href="" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Get Started</a>
+                    <!-- <a href="" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Get Started</a> -->
                 </div>
                 <div class="col-md-6 animated fadeIn">
                     <div class="owl-carousel header-carousel">
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="img/carousel-1.jpg" alt="">
+                            <img class="img-fluid" src="img/uor1.jpg" alt="">
                         </div>
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="img/carousel-2.jpg" alt="">
+                            <img class="img-fluid" src="img/uor2.jpg" alt="">
                         </div>
                     </div>
                 </div>

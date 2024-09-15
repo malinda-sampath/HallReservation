@@ -39,7 +39,7 @@
                     <div class="icon p-2 me-2">
                         <img class="img-fluid" src="img/icon-deal.png" alt="Icon" style="width: 30px; height: 30px;">
                     </div>
-                    <h1 class="m-0 text-primary">HALL RESERVATION</h1>
+                    <h1 class="m-0 text-primary">Lecture Hall Reservation</h1><p>
                 </a>
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -109,8 +109,15 @@
                             <td>{{ $row->update_date }}</td>
                             <td>
                                 <a href="{{ url('edit/'.$row->id)}}#dataEntryForm" class="btn btn-success">Edit</a>
-                                <a href="{{ url('delete/'.$row->id)}}" class="btn btn-danger">Delete</a>
+                                <!-- <a href="{{ url('delete/'.$row->id)}}" class="btn btn-danger" >Delete</a> -->
                             </td>
+                            <td>
+                            <form action="{{ route('table1.delete', $row->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this record?');">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+            </td>
                             <td><i class="fa-solid fa-eye"></i></td>
                         </tr>
                         @endforeach
@@ -224,8 +231,22 @@
 
         <!-- Table View Start -->
         <div class="container">
-            <h1>Request Table</h1>
+            <h1>Requests Table</h1>
             <div class="table-responsive">
+ <!-- Status Filter Start -->
+ <form method="GET" action="{{ route('home') }}">
+        <div class="form-group">
+            <label for="status">Filter by Status:</label>
+            <select name="status" id="status" class="form-control" onchange="this.form.submit()">
+                <option value="" {{ request('status') == '' ? 'selected' : '' }}>All</option>
+                <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>Pending</option>
+                <option value="accepted" {{ request('status') == 'accepted' ? 'selected' : '' }}>Accepted</option>
+                <option value="denied" {{ request('status') == 'denied' ? 'selected' : '' }}>Denied</option>
+            </select>
+        </div>
+    </form>
+<!-- Status Filter End -->
+
                 <table class="table">
                     <thead>
                         <tr>
@@ -239,19 +260,57 @@
                             <th>Purpose</th>
                             <th>Status</th>
                             <th>Requested Date</th>
+                            <th>Respond</th>
                             <th>Respond Date</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
                         <tbody>
-                        @foreach($data as $row)
-                        <tr class="table-row">
-                        </tr>
-                        @endforeach
+                        @foreach($reservationsData as $field)
+                <tr>
+                    <td>{{ $field->id }}</td>
+                    <td>{{ $field->hall }}</td>
+                    <td>{{ $field->name }}</td>
+                    <td>{{ $field->position }}</td>
+                    <td>{{ $field->event_date }}</td>
+                    <td>{{ $field->start_time }}</td>
+                    <td>{{ $field->end_time }}</td>
+                    <td>{{ $field->purpose }}</td>
+                    <td>{{ $field->status }}</td>
+                    <td>{{ $field->insert_date }}</td>
+                    <td>
+                <!-- Respond buttons -->
+                <div class="btn-group" role="group" aria-label="Respond buttons">
+                    <form action="{{ route('reservations.updateStatus', $field->id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        <input type="hidden" name="status" value="accepted">
+                        <button type="submit" class="btn btn-success">Accept</button>
+                    </form>
+                    <form action="{{ route('reservations.updateStatus', $field->id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        <input type="hidden" name="status" value="denied">
+                        <button type="submit" class="btn btn-danger">Deny</button>
+                    </form>
+            </td>
+                    <td>{{ $field->update_date }}</td>
+                    <td>
+                    <form action="{{ route('reservations.destroy', $field->id) }}" method="POST" onsubmit="return confirmDelete()">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+            </td>
+                </tr>
+                @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
+        <script>
+    function confirmDelete() {
+        return confirm('Are you sure you want to delete this record? This action cannot be undone.');
+    }
+</script>
         <!-- Table View End -->
 
         <!-- Footer Start -->
