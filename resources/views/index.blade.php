@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -288,6 +289,33 @@
         </div> -->
         <!-- Testimonial End -->
         
+        <h1>Reservations</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Hall No</th>
+            <th>Date</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+<<<<<<< HEAD
+            
+=======
+            @foreach($reservationsData as $reservation)     
+                        <tr>
+                            <td>{{ $reservation->hall }}</td>
+                            <td>{{ $reservation->event_date }}</td>
+                            <td>{{ $reservation->start_time }}</td>
+                            <td>{{ $reservation->end_time }}</td>
+                            <td>{{ $reservation->status }}</td>
+                        </tr>                  
+            @endforeach
+>>>>>>> 485ff25d88391823e10cddf76ee4427a779ad0f3
+    </tbody>
+</table>
 
         <!-- Footer Start -->
         <div class="footer bg-dark text-white-50 pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">

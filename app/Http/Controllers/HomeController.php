@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -25,6 +26,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
+        // Query for Table1 data
         $query = Table1::query();
 
         // Apply filters if they exist
@@ -38,7 +40,6 @@ class HomeController extends Controller
 
         // Get the filtered results or all data if no filters are applied
         $data = $query->get();
-        
 
         // Check if an edit_id is provided
         $table1 = null;
@@ -46,18 +47,21 @@ class HomeController extends Controller
             $table1 = Table1::find($request->edit_id);
         }
 
-        // Filter Reservation Data by status
-    $reservationQuery = Reservation::query();
+        // Query for Reservation data
+        $reservationQuery = Reservation::query();
 
-    // Filter by status if selected
-    if ($request->filled('status')) {
-        $reservationQuery->where('status', $request->input('status'));
-    }
+        // Filter by status if selected
+        if ($request->filled('status')) {
+            $reservationQuery->where('status', $request->input('status'));
+        }
 
-    // Get the filtered reservations data
-    $reservationsData = $reservationQuery->get();
+        // Get the filtered reservations data
+        $reservationsData = $reservationQuery->get();
+
         // Pass the data and the specific record to be edited (if any) to the view
         return view('home', compact('data', 'table1', 'reservationsData'));
+
+        
     }
 
     public function destroy($id)
@@ -97,5 +101,4 @@ class HomeController extends Controller
             return redirect()->back()->with('error', 'Reservation not found.');
         }
     }
-
 }
