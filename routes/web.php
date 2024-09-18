@@ -25,22 +25,6 @@
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Auth::routes();
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     Route::post('/home', [DataEntryController::class, 'store']);
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -50,6 +34,10 @@
     Route::get('/delete/{id}', [DataEntryController::class,'delete']);
     Route::post('/contact', [ContactController::class, 'store']);   
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
+
+
     Route::delete('/reservations/{id}', [HomeController::class, 'destroy'])->name('reservations.destroy');
     Route::delete('/delete/table1/{id}', [HomeController::class, 'destroyTable1Record'])->name('table1.delete');
     Route::post('/reservations/{id}/updateStatus', [HomeController::class, 'updateStatus'])->name('reservations.updateStatus');
