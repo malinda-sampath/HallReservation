@@ -1,5 +1,4 @@
 <?php
-
     use Illuminate\Support\Facades\Route;
     use App\Http\Controllers\HomeController;
     use App\Http\Controllers\Auth\LoginController;
@@ -13,7 +12,6 @@
     });
 
     Route::get('/index', [TimeTableController::class, 'timetable'])->name('index');
-
 
     // Authentication Routes
     Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -43,6 +41,3 @@
    
    // Route to download PDF
    Route::get('/download-pdf/{id}', [ContactController::class, 'downloadPDF'])->name('requests.download_pdf');
-   
-
-    
