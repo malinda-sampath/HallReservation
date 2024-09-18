@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -58,6 +58,8 @@
                     <div class="navbar-nav ms-auto">
                         <a href="{{ route('index') }}" class="nav-item nav-link active">Home</a>
                         <a href="/contact" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
             </nav>
         </div>
         <!-- Navbar End -->
@@ -287,7 +289,7 @@
             </div>
         </div> -->
         <!-- Testimonial End -->
-        
+
 
         <!-- Footer Start -->
         <div class="footer bg-dark text-white-50 pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -295,7 +297,7 @@
                 <div class="copyright">
                     <div class="row align-items-center">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">DCS - University of Ruhuna</a>, All Right Reserved. 
+                            &copy; <a class="border-bottom" href="#">DCS - University of Ruhuna</a>, All Right Reserved.
                         </div>
                         <div class="col-md-6 text-center text-md-end footer-social">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
