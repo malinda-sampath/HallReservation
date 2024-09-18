@@ -39,3 +39,5 @@
     Route::delete('/reservations/{id}', [HomeController::class, 'destroy'])->name('reservations.destroy');
     Route::delete('/delete/table1/{id}', [HomeController::class, 'destroyTable1Record'])->name('table1.delete');
     Route::post('/reservations/{id}/updateStatus', [HomeController::class, 'updateStatus'])->name('reservations.updateStatus');
+
+    Route::get('/', [HomeController::class, 'index'])->name('home');

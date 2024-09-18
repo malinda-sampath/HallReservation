@@ -254,7 +254,7 @@
                             <th>Hall ID</th>
                             <th>Name</th>
                             <th>Position</th>
-                            <th>Date</th>
+                            <th>Event Date</th>
                             <th>Start Time</th>
                             <th>End Time</th>
                             <th>Purpose</th>
