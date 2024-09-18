@@ -300,21 +300,7 @@
             <th>Status</th>
         </tr>
     </thead>
-    <tbody>
-<<<<<<< HEAD
-            
-=======
-            @foreach($reservationsData as $reservation)     
-                        <tr>
-                            <td>{{ $reservation->hall }}</td>
-                            <td>{{ $reservation->event_date }}</td>
-                            <td>{{ $reservation->start_time }}</td>
-                            <td>{{ $reservation->end_time }}</td>
-                            <td>{{ $reservation->status }}</td>
-                        </tr>                  
-            @endforeach
->>>>>>> 485ff25d88391823e10cddf76ee4427a779ad0f3
-    </tbody>
+
 </table>
 
         <!-- Footer Start -->
