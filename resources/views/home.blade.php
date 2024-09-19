@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -46,7 +46,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        
+
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
@@ -71,7 +71,7 @@
                                 </div>
                             @endif
                         </div>
-                        
+
         @endsection
         <!-- sign in -->
 
@@ -92,7 +92,7 @@
                             <th>Created Date</th>
                             <th>Updated Date</th>
                             <th>Action</th>
-                            <th>Hide</th>
+                            <th></th>
                         </tr>
                     </thead>
                         <tbody>
@@ -109,9 +109,14 @@
                             <td>{{ $row->update_date }}</td>
                             <td>
                                 <a href="{{ url('edit/'.$row->id)}}#dataEntryForm" class="btn btn-success">Edit</a>
-                                <a href="{{ url('delete/'.$row->id)}}" class="btn btn-danger">Delete</a>
                             </td>
-                            <td><i class="fa-solid fa-eye"></i></td>
+                            <td>
+                                <form action="{{ route('table1.delete', $row->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this record?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -226,6 +231,19 @@
         <div class="container">
             <h1>Request Table</h1>
             <div class="table-responsive">
+                <form method="GET" action="{{ route('home') }}">
+                    <div class="form-group">
+                        <label for="status">Filter by Status:</label>
+                        <select name="status" id="status" class="form-control" onchange="this.form.submit()">
+                            <option value="" {{ request('status') == '' ? 'selected' : '' }}>All</option>
+                            <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>Pending</option>
+                            <option value="accepted" {{ request('status') == 'accepted' ? 'selected' : '' }}>Accepted</option>
+                            <option value="denied" {{ request('status') == 'denied' ? 'selected' : '' }}>Denied</option>
+                        </select>
+                    </div>
+                </form>
+                <!-- Status Filter End -->
+
                 <table class="table">
                     <thead>
                         <tr>
@@ -244,14 +262,51 @@
                         </tr>
                     </thead>
                         <tbody>
-                        @foreach($data as $row)
-                        <tr class="table-row">
-                        </tr>
+                        @foreach($reservationsData as $field)
+                            <tr>
+                                <td>{{ $field->id }}</td>
+                                <td>{{ $field->hall }}</td>
+                                <td>{{ $field->name }}</td>
+                                <td>{{ $field->position }}</td>
+                                <td>{{ $field->event_date }}</td>
+                                <td>{{ $field->start_time }}</td>
+                                <td>{{ $field->end_time }}</td>
+                                <td>{{ $field->purpose }}</td>
+                                <td>{{ $field->status }}</td>
+                                <td>{{ $field->insert_date }}</td>
+                                <td>
+                                    <!-- Respond buttons -->
+                                    <div class="btn-group" role="group" aria-label="Respond buttons">
+                                        <form action="{{ route('reservations.updateStatus', $field->id) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            <input type="hidden" name="status" value="accepted">
+                                            <button type="submit" class="btn btn-success">Accept</button>
+                                        </form>
+                                        <form action="{{ route('reservations.updateStatus', $field->id) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            <input type="hidden" name="status" value="denied">
+                                            <button type="submit" class="btn btn-danger">Deny</button>
+                                        </form>
+                                </td>
+                                <td>{{ $field->update_date }}</td>
+                                <td>
+                                    <form action="{{ route('reservations.destroy', $field->id) }}" method="POST" onsubmit="return confirmDelete()">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
+        <script>
+            function confirmDelete() {
+                return confirm('Are you sure you want to delete this record? This action cannot be undone.');
+            }
+        </script>
         <!-- Table View End -->
 
         <!-- Footer Start -->
@@ -260,7 +315,7 @@
                 <div class="copyright">
                     <div class="row align-items-center">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">DCS - University of Ruhuna</a>, All Right Reserved. 
+                            &copy; <a class="border-bottom" href="#">DCS - University of Ruhuna</a>, All Right Reserved.
                         </div>
                         <div class="col-md-6 text-center text-md-end footer-social">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>

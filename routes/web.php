@@ -36,20 +36,24 @@
 
    // Route to handle form submission
    Route::post('/contact', [ContactController::class, 'store'])->name('requests.store');
-   
+
    // Route to display feedback page
    Route::get('/feedback/{id}', [ContactController::class, 'feedback'])->name('requests.feedback');
-   
+
    // Route to download PDF
    Route::get('/download-pdf/{id}', [ContactController::class, 'downloadPDF'])->name('requests.download_pdf');
 
    // Display all reservations
    Route::get('/reservations', [ReservationController::class, 'index'])->name('reservations.index');
-   
+
    // Search reservations
    Route::get('/reservations/search', [ReservationController::class, 'search'])->name('reservations.search');
-   
+
    // Show a specific reservation
    Route::get('/reservations/{id}', [ReservationController::class, 'show'])->name('reservations.show');
    Route::patch('/reservations/{id}/approve', [ReservationController::class, 'approve'])->name('reservations.approve');
-   
+
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::delete('/reservations/{id}', [HomeController::class, 'destroy'])->name('reservations.destroy');
+    Route::delete('/delete/table1/{id}', [HomeController::class, 'destroyTable1Record'])->name('table1.delete');
+    Route::post('/reservations/{id}/updateStatus', [HomeController::class, 'updateStatus'])->name('reservations.updateStatus');

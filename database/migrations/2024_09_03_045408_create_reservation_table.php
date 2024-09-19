@@ -4,12 +4,10 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-Class CreateReservationsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up(): void
     {
@@ -24,15 +22,12 @@ Class CreateReservationsTable extends Migration
             $table->time('end_time');
             $table->string('contact_num');
             $table->string('status')->default('pending');
+            $table->date('insert_date');
+            $table->date('update_date');
             $table->timestamps();
+            
         });
     }
-    
-
-        
-
-
-
 
     /**
      * Reverse the migrations.
