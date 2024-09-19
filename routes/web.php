@@ -5,6 +5,7 @@
     use App\Http\Controllers\DataEntryController;
     use App\Http\Controllers\TimeTableController;
     use App\Http\Controllers\ContactController;
+    use App\Http\Controllers\ReservationController;
 
     //Contact Routes
     Route::get('/contact', function () {
@@ -41,3 +42,14 @@
    
    // Route to download PDF
    Route::get('/download-pdf/{id}', [ContactController::class, 'downloadPDF'])->name('requests.download_pdf');
+
+   // Display all reservations
+   Route::get('/reservations', [ReservationController::class, 'index'])->name('reservations.index');
+   
+   // Search reservations
+   Route::get('/reservations/search', [ReservationController::class, 'search'])->name('reservations.search');
+   
+   // Show a specific reservation
+   Route::get('/reservations/{id}', [ReservationController::class, 'show'])->name('reservations.show');
+   Route::patch('/reservations/{id}/approve', [ReservationController::class, 'approve'])->name('reservations.approve');
+   
