@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Reservation extends Model
+class reservation extends Model
 {
     use HasFactory;
 
@@ -15,12 +15,12 @@ class Reservation extends Model
         'position',
         'hall',
         'purpose',
+        'contact_num',
         'event_date',
         'start_time',
         'end_time',
-        'contact_num',
-        'status'
+        'status',
+        'insert_date',
+        'update_date'
     ];
 }
-
-
